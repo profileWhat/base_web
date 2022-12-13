@@ -1,4 +1,9 @@
 <?php
+session_start();
+$errorMessage = $_SESSION["errorMessage"];
+$successMessage = $_SESSION["successMessage"];
+$_SESSION["errorMessage"] = '';
+$_SESSION["successMessage"] = '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +33,8 @@
         <div class="col-md-12">
             <h2>Register</h2>
             <p>Please fill this form to create an account.</p>
+            <p class="text-danger"><?php echo $errorMessage?></p>
+            <p class="text-success"><?php echo $successMessage?></p>
             <form action="../controllers/RegisterController.php" method="post">
                 <div class="form-group">
                     <label>Email Address</label>

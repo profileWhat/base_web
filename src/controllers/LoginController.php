@@ -11,19 +11,27 @@ session_start();
 $isValidData = true;
 $isCorrectPassword = true;
 $isUserExist = true;
+
+$errorMessage = '';
+
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
+
 $pattern = '/[^\s]*@[a-z0-9.-]*/i';
 preg_match($pattern, $email, $matches, PREG_OFFSET_CAPTURE);
+
 if (empty($email)) {
     $isValidData = false;
+    $errorMessage .= "Please enter your email\n";
 } else {
     if (sizeof($matches) !== 1) {
         $isValidData = false;
+        $errorMessage .= "Please enter your email correctly\n";
     }
 }
 if (empty($password)) {
     $isValidData = false;
+    $errorMessage .= "Please enter your password\n";
 }
 
 if ($isValidData) {
@@ -39,5 +47,16 @@ if ($isValidData) {
         } else $isCorrectPassword = false;
     } else $isUserExist = false;
 }
-
+if (!$isValidData) {
+    $_SESSION["errorMessage"] = $errorMessage;
+    header("location: ../view/login.php");
+}
+if (!$isCorrectPassword) {
+    $_SESSION["errorMessage"] = 'Incorrect password';
+    header("location: ../view/login.php");
+}
+if (!$isUserExist) {
+    $_SESSION["errorMessage"] = 'User with that email is not exist';
+    header("location: ../view/login.php");
+}
 if ($isCorrectPassword && $isValidData && $isUserExist) header("location: ../view/main.php");

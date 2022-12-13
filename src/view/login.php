@@ -1,4 +1,7 @@
 <?php
+session_start();
+$errorMessage = $_SESSION["errorMessage"];
+$_SESSION["errorMessage"] = '';
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +32,7 @@
         <div class="col-md-12">
             <h2>Login</h2>
             <p>Please fill in your email and password.</p>
+            <p class="text-danger"><?php echo $errorMessage?></p>
             <form action="../controllers/LoginController.php" method="post">
                 <div class="form-group">
                     <label>Email Address</label>
