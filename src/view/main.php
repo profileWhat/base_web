@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION["userid"]) || $_SESSION["userid"] !== true) {
+    header("location: login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -28,6 +28,7 @@
         <div class="col-md-12">
             <h2>Register</h2>
             <p>Please fill this form to create an account.</p>
+            <?php echo $error; ?>
             <form action="" method="post">
                 <div class="form-group">
                     <label>Email Address</label>
