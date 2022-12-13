@@ -1,5 +1,6 @@
 <?php
-if (!isset($_SESSION["userid"]) || $_SESSION["userid"] !== true) {
+session_start();
+if (!isset($_SESSION["userid"])) {
     header("location: login.php");
     exit;
 }
@@ -40,7 +41,8 @@ if (!isset($_SESSION["userid"]) || $_SESSION["userid"] !== true) {
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
-            <h2>Fill some values</h2>
+            <h2>Welcome <?php echo $_SESSION["userEmail"]; ?></h2>
+            <h2>Please fill some values</h2>
             <form action="" method="post">
                 <div class="form-group my-3">
                     <label>Enter your opinion about the page</label>

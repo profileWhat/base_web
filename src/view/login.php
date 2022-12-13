@@ -29,7 +29,7 @@
         <div class="col-md-12">
             <h2>Login</h2>
             <p>Please fill in your email and password.</p>
-            <form action="" method="post">
+            <form action="../controllers/LoginController.php" method="post">
                 <div class="form-group">
                     <label>Email Address</label>
                     <input type="email" name="email" class="form-control" required />
