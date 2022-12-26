@@ -40,10 +40,10 @@ $_SESSION["errorMessage"] = '';
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" required>
+                    <input type="password" name="password" class="form-control" required/>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="submit" class="btn btn-primary my-4" value="Submit">
+                    <input type="submit" name="submit" class="btn btn-primary my-4" value="Submit"/>
                 </div>
                 <p>Don't have an account? <a href="register.php">Register here</a>.</p>
             </form>

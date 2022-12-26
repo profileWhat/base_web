@@ -14,7 +14,7 @@ class UserCrudRepository extends CrudRepository
     public function save(User $user): bool
     {
         $connection = $this->PDOCommunicator->getConnection();
-        $passwordHash = password_hash($user->getPassword(), PASSWORD_BCRYPT);
+        $passwordHash = password_hash($user->getPassword(), PASSWORD_DEFAULT);
         $email = $user->getEmail();
         $query = $connection->prepare("INSERT INTO users(email, password) VALUES (:email, :password)");
         $query->bindParam("email", $email);

@@ -42,7 +42,7 @@ if ($isValidData) {
     if ($userAssociativeArray !== false) {
         $user->accept(new AssociativeImportVisitor($userAssociativeArray));
         if (password_verify($password, $user->getPassword())) {
-            $_SESSION["userid"] = $user->getId();
+            $_SESSION["userId"] = $user->getId();
             $_SESSION["userEmail"] = $user->getEmail();
         } else $isCorrectPassword = false;
     } else $isUserExist = false;

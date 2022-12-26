@@ -42,14 +42,14 @@ $_SESSION["successMessage"] = '';
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" required>
+                    <input type="password" name="password" class="form-control" required/>
                 </div>
                 <div class="form-group">
                     <label>Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control" required>
+                    <input type="password" name="confirm_password" class="form-control" required/>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="submit" class="btn btn-primary my-4" value="Submit">
+                    <input type="submit" name="submit" class="btn btn-primary my-4" value="Submit"/>
                 </div>
                 <p>Already have an account? <a href="login.php">Login here</a>.</p>
             </form>
